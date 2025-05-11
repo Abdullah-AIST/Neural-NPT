@@ -53,7 +53,7 @@ export const components = {pre: CodeBlock, table: Table}
       institution: "Institution Four",
     },
   ]}
-  conference="Conference Name"
+  conference="Robotics and Automation Letters (RAL) 2025"
   notes={[
     {
       symbol: "*",
@@ -79,68 +79,186 @@ export const components = {pre: CodeBlock, table: Table}
       name: "arXiv",
       url: "",
       icon: "academicons:arxiv",
-    },
-    {
-      name: "Bluesky",
-      url: "",
-      icon: "ri:bluesky-line"
     }
   ]}
   />
 
-<Video source={outside} />
+{/* <Video source={outside} /> */}
 
 <HighlightedSection>
 
 ## Abstract
 
-This is a live demo for a template you can use to create a simple project page for your research paper. See the code for the template and instructions on how to use it yourself [here](https://github.com/RomanHauksson/academic-project-astro-template). It's made with the [Astro web framework](https://astro.build/) and styled with [Tailwind CSS](https://tailwindcss.com/). You write the content in [MDX](https://mdxjs.com/), which enables markdown formatting like **bold**, _italics_, and ~strikethrough~, as well as custom components like <SmallCaps>small caps.</SmallCaps>
+This work proposes a learning-based approach to dynamic non-prehensile object transportation (e.g., "Waiter's Problem"). Model-based approaches start with a strong dynamic grasping assumption and optimize trajectories under such constraints. However, this optimization process is prone to failure, slow convergence, or suboptimal solutions due to the constraints imposed by dynamic grasping. To address these limitations, we propose a motion-planning neural policy learned via reinforcement learning. The task is formulated as a Markov decision problem, with carefully designed observation space, action space, and reward formulation. Acceleration-based action was crucial for smooth trajectory generation and sim2real transferability. Prior to training, the sim2real robot dynamics gap was minimized through system identification. Towards generalization to wide range of objects, we randomized object size, friction, mass, center of mass, and initial pose during training. By curating the randomization process, different policies are obtained including an "Optimal" policy with full observability and a "Robust" policy under partial observability of object inertia and pose. The trained policy is used for offline trajectory planning, resulting in fast and robust trajectories successfully deployed in both simulated and physical environments. Both our "Optimal" and "Robust" policies had higher peak velocities and accelerations, and shorter reaching times compared to the model-based baseline.
 
 </HighlightedSection>
 
-## Figures
+# Real-world Validation
+fdsafdsfsf
 
-Use the figure component to display images, videos, equations, or any other element, with an optional caption.
+## Optimal Vs. Optimal-DG 
 
-<Figure>
-  <Image slot="figure" source={transformer} altText="Diagram of the transformer deep learning architecture." />
-  <span slot="caption">Diagram of the transformer deep learning architecture.</span>
-</Figure>
+Optimal is faster but may not be as stable for long time operation
 
-## Image comparison slider
-
-An interactive, accessible slider component with keyboard navigation.
-<Figure>
-  <ImageComparison slot="figure" client:load imageUrlOne={dogsDiffc.src} imageUrlTwo={dogsTrue.src} altTextOne="Photo of two dogs running side-by-side in shallow water, lossily compressed using the DiffC algorithm" altTextTwo="Original photo of two dogs running side-by-side in shallow water" />
-  <span slot="caption">A photo of two dogs running side-by-side in shallow water, lossily compressed using the <a href="https://jeremyiv.github.io/diffc-project-page/">DiffC algorithm</a>.</span>
-</Figure>
-
-## Two columns
-
-Use the two columns component to display two columns of content. In this example, the first column contains a figure with a YouTube video and the second column contains a figure with a custom [React](https://react.dev/) component. By default, they display side by side, but if the screen is narrow enough (for example, on mobile), they're arranged vertically.
-
+### WoodBlock
 <TwoColumns>
   <Figure slot="left">
-    <YouTubeVideo slot="figure" videoId="69lIC0Mm9yQ" />
-    <span slot="caption">Take a look at this YouTube video.</span>
+    <YouTubeVideo slot="figure" videoId="v964eNtG6V8" />
+    <span slot="caption">Optimal Policy [32/32]</span>
   </Figure>
   <Figure slot="right">
-    <Splat slot="figure" client:idle />
-    <span slot="caption">Now look at this <a href="https://en.wikipedia.org/wiki/Gaussian_splatting">Gaussian splat</a>, rendered with a React component.</span>
+    <YouTubeVideo slot="figure" videoId="sYLbvGEPlGY" />
+    <span slot="caption">Optimal-DG Policy [32/32]</span>
   </Figure>
 </TwoColumns>
 
-## Heading levels
+### Chips
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="WJdUwITaY34" />
+    <span slot="caption">Optimal Policy [32/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="ITR15S27lao" />
+    <span slot="caption">Optimal-DG Policy [32/32]</span>
+  </Figure>
+</TwoColumns>
 
-Use headings to divide your content into sections.
+### CrackerBox
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="6jBM9eprjSg" />
+    <span slot="caption">Optimal Policy [32/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="VqgffYWCYBQ" />
+    <span slot="caption">Optimal-DG Policy [32/32]</span>
+  </Figure>
+</TwoColumns>
 
-### Heading 3
+### BleachCleanser
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="c6xx1Tetu4M" />
+    <span slot="caption">Optimal Policy [12/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="jUCgVkvo1g8" />
+    <span slot="caption">Optimal-DG Policy [22/32]</span>
+  </Figure>
+</TwoColumns>
 
-Go down a level to heading 3...
+### TallBox-Center
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="qDl7Of0KIs8" />
+    <span slot="caption">Optimal Policy [14/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="u-PB8xAhsdI" />
+    <span slot="caption">Optimal-DG Policy [32/32]</span>
+  </Figure>
+</TwoColumns>
 
-#### Heading 4
+## COM-Robust Vs. Optimal
 
-...and down again to heading 4.
+For objects with inertia uncertainity, COM-Robust policy is more stable yet slower.
+
+### PowerDrill
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="ATX4jsaAYhs" />
+    <span slot="caption">COM-Robust Policy [14/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="RoY0br8Qn28" />
+    <span slot="caption">Optimal Policy [0/32]</span>
+  </Figure>
+</TwoColumns>
+
+### Pitcher
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="1mF-UcuJ4vY" />
+    <span slot="caption">COM-Robust Policy [25/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="mVLbxQnohHo" />
+    <span slot="caption">Optimal Policy [2/32]</span>
+  </Figure>
+</TwoColumns>
+
+### TallBox-Top
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="15A-d8hpFxQ" />
+    <span slot="caption">COM-Robust Policy [23/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="69DSX8XYZVg" />
+    <span slot="caption">Optimal Policy [0/32]</span>
+  </Figure>
+</TwoColumns>
+
+## Multi-Robust Vs. Optimal
+
+For objects with inertia uncertainity, COM-Robust policy is more stable yet slower.
+
+### Noodles
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="69lIC0Mm9yQ" />
+    <span slot="caption">Multi-Robust Policy [14/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="fTvm-CGpfos" />
+    <span slot="caption">Optimal Policy [0/32]</span>
+  </Figure>
+</TwoColumns>
+
+### Bottles
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="HMh7PN9bx_Q" />
+    <span slot="caption">Multi-Robust Policy [14/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="fn8P6RxZKU4" />
+    <span slot="caption">Optimal Policy [0/32]</span>
+  </Figure>
+</TwoColumns>
+
+
+## Extra Footage
+
+For objects with inertia uncertainity, COM-Robust policy is more stable yet slower.
+
+### NoodlesTower
+Multiple stacked objects 
+<Figure>
+  <YouTubeVideo slot="figure" videoId="9VUIa_-5jJM" />
+  <span slot="caption">Multi-Robust Policy [8/32]</span>
+</Figure>
+
+### CrackerBox-Rotated
+Extra air resistance.
+<Figure>
+  <YouTubeVideo slot="figure" videoId="GYYoitFCKG0" />
+  <span slot="caption">Optimal Policy [32/32]</span>
+</Figure>
+
+### Faster WoodBlock
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="TDm0R-4XJ34" />
+    <span slot="caption">Optimal Policy (<LaTeX inline formula="\mu=0.3" />) [16/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="N8abYRtAokM" />
+    <span slot="caption">Optimal Policy (<LaTeX inline formula="\mu=0.5" />) [4/32]</span>
+  </Figure>
+</TwoColumns>
+
 
 ## LaTeX
 
@@ -162,10 +280,9 @@ You can add simple tables using [GitHub Flavored Markdown syntax](https://docs.g
 ## BibTeX citation
 
 ```bibtex
-@misc{roman2024academic,
-  author = "{Roman Hauksson}",
-  title = "Academic Project Page Template",
-  year = "2024",
-  howpublished = "\url{https://research-template.roman.technology}",
+@misc{neuralNPT_ral2025,
+  author = "{Author One}",
+  title = "Neural-NPT: A Reinforcement Learning Perspective to Dynamic Non-Prehensile Object Transportation",
+  year = "2025",
 }
 ```
