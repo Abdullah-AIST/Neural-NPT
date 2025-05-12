@@ -13,6 +13,7 @@ import SmallCaps from "../components/SmallCaps.astro";
 import Figure from "../components/Figure.astro";
 import Image from "../components/Image.astro";
 import TwoColumns from "../components/TwoColumns.astro";
+import ThreeColumns from "../components/ThreeColumns.astro";
 import YouTubeVideo from "../components/YouTubeVideo.astro";
 import LaTeX from "../components/LaTeX.astro";
 
@@ -101,104 +102,136 @@ fdsafdsfsf
 Optimal is faster but may not be as stable for long time operation
 
 ### WoodBlock
-<TwoColumns>
+<ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="v964eNtG6V8" />
     <span slot="caption">Optimal Policy [32/32]</span>
   </Figure>
-  <Figure slot="right">
+  <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="sYLbvGEPlGY" />
     <span slot="caption">Optimal-DG Policy [32/32]</span>
   </Figure>
-</TwoColumns>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="rvBT0EBpbfs" />
+    <span slot="caption">Upright Baseline [29/32]</span>
+  </Figure>
+</ThreeColumns>
 
 ### Chips
-<TwoColumns>
+<ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="WJdUwITaY34" />
     <span slot="caption">Optimal Policy [32/32]</span>
   </Figure>
-  <Figure slot="right">
+  <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="ITR15S27lao" />
     <span slot="caption">Optimal-DG Policy [32/32]</span>
   </Figure>
-</TwoColumns>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="34y-fJQ8hoc" />
+    <span slot="caption">Upright Baseline [31/32]</span>
+  </Figure>
+</ThreeColumns>
 
 ### CrackerBox
-<TwoColumns>
+<ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="6jBM9eprjSg" />
     <span slot="caption">Optimal Policy [32/32]</span>
   </Figure>
-  <Figure slot="right">
+  <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="VqgffYWCYBQ" />
     <span slot="caption">Optimal-DG Policy [32/32]</span>
   </Figure>
-</TwoColumns>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="1G9t_jd6FXI" />
+    <span slot="caption">Upright Baseline [28/32]</span>
+  </Figure>
+</ThreeColumns>
 
 ### BleachCleanser
-<TwoColumns>
+<ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="c6xx1Tetu4M" />
     <span slot="caption">Optimal Policy [12/32]</span>
   </Figure>
-  <Figure slot="right">
+  <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="jUCgVkvo1g8" />
     <span slot="caption">Optimal-DG Policy [22/32]</span>
   </Figure>
-</TwoColumns>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="cArGAAFWHBw" />
+    <span slot="caption">Upright Baseline [30/32]</span>
+  </Figure>
+</ThreeColumns>
 
 ### TallBox-Center
-<TwoColumns>
+<ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="qDl7Of0KIs8" />
     <span slot="caption">Optimal Policy [14/32]</span>
   </Figure>
-  <Figure slot="right">
+  <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="u-PB8xAhsdI" />
     <span slot="caption">Optimal-DG Policy [32/32]</span>
   </Figure>
-</TwoColumns>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="lpckEQ3DGn4" />
+    <span slot="caption">Upright Baseline [24/32]</span>
+  </Figure>
+</ThreeColumns>
 
 ## COM-Robust Vs. Optimal
 
 For objects with inertia uncertainity, COM-Robust policy is more stable yet slower.
 
 ### PowerDrill
-<TwoColumns>
+<ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="ATX4jsaAYhs" />
     <span slot="caption">COM-Robust Policy [14/32]</span>
   </Figure>
-  <Figure slot="right">
+  <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="RoY0br8Qn28" />
     <span slot="caption">Optimal Policy [0/32]</span>
   </Figure>
-</TwoColumns>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="Hte49KuQmUE" />
+    <span slot="caption">Upright-Robust Baseline [*/32]</span>
+  </Figure>
+</ThreeColumns>
 
 ### Pitcher
-<TwoColumns>
+<ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="1mF-UcuJ4vY" />
     <span slot="caption">COM-Robust Policy [25/32]</span>
   </Figure>
-  <Figure slot="right">
+  <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="mVLbxQnohHo" />
     <span slot="caption">Optimal Policy [2/32]</span>
   </Figure>
-</TwoColumns>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="UW1CwZUFwXo" />
+    <span slot="caption">Upright-Robust Baseline [*/32]</span>
+  </Figure>
+</ThreeColumns>
 
 ### TallBox-Top
-<TwoColumns>
+<ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="15A-d8hpFxQ" />
     <span slot="caption">COM-Robust Policy [23/32]</span>
   </Figure>
-  <Figure slot="right">
+  <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="69DSX8XYZVg" />
     <span slot="caption">Optimal Policy [0/32]</span>
   </Figure>
-</TwoColumns>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="OpuBcsAeLQk" />
+    <span slot="caption">Upright-Robust Baseline [*/32]</span>
+  </Figure>
+</ThreeColumns>
 
 ## Multi-Robust Vs. Optimal
 
@@ -208,11 +241,11 @@ For objects with inertia uncertainity, COM-Robust policy is more stable yet slow
 <TwoColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="69lIC0Mm9yQ" />
-    <span slot="caption">Multi-Robust Policy [14/32]</span>
+    <span slot="caption">Multi-Robust Policy [32/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="fTvm-CGpfos" />
-    <span slot="caption">Optimal Policy [0/32]</span>
+    <span slot="caption">Optimal Policy [5/32]</span>
   </Figure>
 </TwoColumns>
 
@@ -220,11 +253,63 @@ For objects with inertia uncertainity, COM-Robust policy is more stable yet slow
 <TwoColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="HMh7PN9bx_Q" />
-    <span slot="caption">Multi-Robust Policy [14/32]</span>
+    <span slot="caption">Multi-Robust Policy [32/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="fn8P6RxZKU4" />
     <span slot="caption">Optimal Policy [0/32]</span>
+  </Figure>
+</TwoColumns>
+
+
+## Friction Coefficient Variations
+
+We test performance of Optimal policy for two surfaces rubber (<LaTeX inline formula="\mu=0.6" />) and paper (<LaTeX inline formula="\mu=0.3" />). Different trajectories are generated by varying the input friction to the policy. It is always safer to assume low friction (<LaTeX inline formula="\mu=0.1" />). High-friction surfaces fails due to tilting, while low-friction surfaces failed to slippage.
+### (<LaTeX inline formula="\mu=0.1" />)
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="S1WnOpCSgmU" />
+    <span slot="caption"> Rubber [32/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="_Ox-iBJwflI" />
+    <span slot="caption"> Paper [13/32]</span>
+  </Figure>
+</TwoColumns>
+
+### (<LaTeX inline formula="\mu=0.2" />)
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="wuPYgTjuEGg" />
+    <span slot="caption"> Rubber [32/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="Bq4xXNTHGDU" />
+    <span slot="caption"> Paper [4/32]</span>
+  </Figure>
+</TwoColumns>
+
+### (<LaTeX inline formula="\mu=0.3" />)
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="DXm9O0D05DA" />
+    <span slot="caption"> Rubber [29/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="B5pcR3HI5Yg" />
+    <span slot="caption"> Paper [2/32]</span>
+  </Figure>
+</TwoColumns>
+
+### (<LaTeX inline formula="\mu=0.5" />)
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="ldP0EEFQokY" />
+    <span slot="caption"> Rubber [5/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="HXJdGW9n2M0" />
+    <span slot="caption"> Paper [1/32]</span>
   </Figure>
 </TwoColumns>
 
@@ -247,35 +332,6 @@ Extra air resistance.
   <span slot="caption">Optimal Policy [32/32]</span>
 </Figure>
 
-### Faster WoodBlock
-<TwoColumns>
-  <Figure slot="left">
-    <YouTubeVideo slot="figure" videoId="TDm0R-4XJ34" />
-    <span slot="caption">Optimal Policy (<LaTeX inline formula="\mu=0.3" />) [16/32]</span>
-  </Figure>
-  <Figure slot="right">
-    <YouTubeVideo slot="figure" videoId="N8abYRtAokM" />
-    <span slot="caption">Optimal Policy (<LaTeX inline formula="\mu=0.5" />) [4/32]</span>
-  </Figure>
-</TwoColumns>
-
-
-## LaTeX
-
-You can also add LaTeX formulas, rendered during the build process using [KaTeX](https://katex.org/) so they're quick to load for visitors of your project page. You can write them inline, like this: <LaTeX inline formula="a^2 + b^2 = c^2" />. Or, you can write them as a block:
-
-<LaTeX formula="\int_a^b f(x) dx" />
-
-## Tables
-
-You can add simple tables using [GitHub Flavored Markdown syntax](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables):
-
-| Model | Accuracy | F1 score | Training time (hours) |
-| :--- | :---: | :---: | :---: |
-| BERT-base | 0.89 | 0.87 | 4.5 |
-| RoBERTa-large | 0.92 | 0.91 | 7.2 |
-| DistilBERT | 0.86 | 0.84 | 2.1 |
-| XLNet | 0.90 | 0.89 | 6.8 |
 
 ## BibTeX citation
 
