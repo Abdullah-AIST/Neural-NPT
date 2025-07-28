@@ -20,6 +20,7 @@ import LaTeX from "../components/LaTeX.astro";
 import { ImageComparison } from "../components/ImageComparison.tsx";
 
 import outside from "../assets/Supplementary Video.mp4";
+import pyb_vid from "../assets/Pybullet_Collision.webm";
 import transformer from "../assets/transformer.webp";
 import Splat from "../components/Splat.tsx"
 import dogsDiffc from "../assets/dogs-diffc.png"
@@ -95,7 +96,7 @@ This work proposes a learning-based approach to dynamic non-prehensile object tr
 </HighlightedSection>
 
 # Real-world Validation
-
+<h3 style="text-align: center">------------------------------</h3>
 ## Transport Anything
 Randomly swapping objects during exection of Optimal policy optimized for the WoodBlock. Learned trajectories is stable under arbitrary objects. 
 <Figure>
@@ -106,83 +107,109 @@ Randomly swapping objects during exection of Optimal policy optimized for the Wo
 
 Optimal is faster but may not be as stable for long time operation
 
-### WoodBlock
+<h3 style="text-align: center">--------------- (WoodBlock) ---------------</h3>
 <ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="v964eNtG6V8" />
-    <span slot="caption">Optimal Policy [32/32]</span>
+    <span slot="caption">Optimal Policy -- <strong>N.C.S.</strong> [32/32]</span>
   </Figure>
   <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="sYLbvGEPlGY" />
-    <span slot="caption">Optimal-DG Policy [32/32]</span>
+    <span slot="caption">Optimal-DG Policy -- <strong>N.C.S.</strong> [32/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="rvBT0EBpbfs" />
-    <span slot="caption">Upright Baseline [29/32]</span>
+    <span slot="caption">Upright Baseline -- <strong>N.C.S.</strong> [29/32]</span>
   </Figure>
 </ThreeColumns>
 
-### Chips
+<h3 style="text-align: center">--------------- (Chips) ---------------</h3>
+
 <ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="WJdUwITaY34" />
-    <span slot="caption">Optimal Policy [32/32]</span>
+    <span slot="caption">Optimal Policy -- <strong>N.C.S.</strong> [32/32]</span>
   </Figure>
   <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="ITR15S27lao" />
-    <span slot="caption">Optimal-DG Policy [32/32]</span>
+    <span slot="caption">Optimal-DG Policy -- <strong>N.C.S.</strong> [32/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="34y-fJQ8hoc" />
-    <span slot="caption">Upright Baseline [31/32]</span>
+    <span slot="caption">Upright Baseline -- <strong>N.C.S.</strong> [31/32]</span>
   </Figure>
 </ThreeColumns>
 
-### CrackerBox
+<h3 style="text-align: center">--------------- (CrackerBox) ---------------</h3>
 <ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="6jBM9eprjSg" />
-    <span slot="caption">Optimal Policy [32/32]</span>
+    <span slot="caption">Optimal Policy -- <strong>N.C.S.</strong> [32/32]</span>
   </Figure>
   <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="VqgffYWCYBQ" />
-    <span slot="caption">Optimal-DG Policy [32/32]</span>
+    <span slot="caption">Optimal-DG Policy -- <strong>N.C.S.</strong> [32/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="1G9t_jd6FXI" />
-    <span slot="caption">Upright Baseline [28/32]</span>
+    <span slot="caption">Upright Baseline -- <strong>N.C.S.</strong> [28/32]</span>
   </Figure>
 </ThreeColumns>
 
-### BleachCleanser
+<h3 style="text-align: center">--------------- (BleachCleanser) ---------------</h3>
+<ThreeColumns>
+  <Figure slot="left">
+    <span slot="caption">Optimal Policy -- <strong>S.R.</strong> [32/32]</span>
+  </Figure>
+  <Figure slot="center">
+    <YouTubeVideo slot="figure" videoId="W7LNpjGxQC8" />
+    <span slot="caption">Optimal-DG Policy -- <strong>S.R.</strong> [32/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <span slot="caption">Upright Baseline -- <strong>S.R.</strong> [30/32]</span>
+  </Figure>
+</ThreeColumns>
 <ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="c6xx1Tetu4M" />
-    <span slot="caption">Optimal Policy [12/32]</span>
+    <span slot="caption">Optimal Policy -- <strong>N.C.S.</strong> [12/32]</span>
   </Figure>
   <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="jUCgVkvo1g8" />
-    <span slot="caption">Optimal-DG Policy [22/32]</span>
+    <span slot="caption">Optimal-DG Policy -- <strong>N.C.S.</strong> [22/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="cArGAAFWHBw" />
-    <span slot="caption">Upright Baseline [30/32]</span>
+    <span slot="caption">Upright Baseline -- <strong>N.C.S.</strong> [30/32]</span>
   </Figure>
 </ThreeColumns>
 
-### TallBox-Center
+<h3 style="text-align: center">--------------- (TallBox-Center) ---------------</h3>
+<ThreeColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="Szj-6F07oy0" />
+    <span slot="caption">Optimal Policy -- <strong>S.R.</strong> [30/32]</span>
+  </Figure>
+  <Figure slot="center">
+    <YouTubeVideo slot="figure" videoId="Au8u80Ux4Qo" />
+    <span slot="caption">Optimal-DG Policy -- <strong>S.R.</strong> [32/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <span slot="caption">Upright Baseline -- <strong>S.R.</strong> [30/32]</span>
+  </Figure>
+</ThreeColumns>
 <ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="qDl7Of0KIs8" />
-    <span slot="caption">Optimal Policy [14/32]</span>
+    <span slot="caption">Optimal Policy -- <strong>N.C.S.</strong> [14/32]</span>
   </Figure>
   <Figure slot="center">
-    <YouTubeVideo slot="figure" videoId="u-PB8xAhsdI" />
-    <span slot="caption">Optimal-DG Policy [32/32]</span>
+    <YouTubeVideo slot="figure" videoId="OT3vkAD3uhw" />
+    <span slot="caption">Optimal-DG Policy -- <strong>N.C.S.</strong> [32/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="lpckEQ3DGn4" />
-    <span slot="caption">Upright Baseline [24/32]</span>
+    <span slot="caption">Upright Baseline -- <strong>N.C.S.</strong> [24/32]</span>
   </Figure>
 </ThreeColumns>
 
@@ -190,51 +217,91 @@ Optimal is faster but may not be as stable for long time operation
 
 For objects with inertia uncertainity, COM-Robust policy is more stable yet slower.
 
-### PowerDrill
+<h3 style="text-align: center">--------------- (Power Drill) ---------------</h3>
+<ThreeColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="X2jrGfXT7DA" />
+    <span slot="caption">COM-Robust Policy -- <strong>S.R.</strong> [14/32]</span>
+  </Figure>
+  <Figure slot="center">
+    <span slot="caption">Optimal Policy -- <strong>S.R.</strong> [0/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="l0QCRPN3GZg" />
+    <span slot="caption">Upright-Robust Baseline -- <strong>S.R.</strong> [24/32]</span>
+  </Figure>
+</ThreeColumns>
 <ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="ATX4jsaAYhs" />
-    <span slot="caption">COM-Robust Policy [14/32]</span>
+    <span slot="caption">COM-Robust Policy -- <strong>N.C.S.</strong> [14/32]</span>
   </Figure>
   <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="RoY0br8Qn28" />
-    <span slot="caption">Optimal Policy [0/32]</span>
+    <span slot="caption">Optimal Policy -- <strong>N.C.S.</strong> [0/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="Hte49KuQmUE" />
-    <span slot="caption">Upright-Robust Baseline [*/32]</span>
+    <span slot="caption">Upright-Robust Baseline -- <strong>N.C.S.</strong> [*/32]</span>
   </Figure>
 </ThreeColumns>
 
-### Pitcher
+<h3 style="text-align: center">--------------- (Pitcher) ---------------</h3>
+<ThreeColumns>
+  <Figure slot="left">
+    <span slot="caption">COM-Robust Policy -- <strong>S.R.</strong> [32/32]</span>
+  </Figure>
+  <Figure slot="center">
+    <YouTubeVideo slot="figure" videoId="_7Qn9doY_UI" />
+    <span slot="caption">Optimal Policy -- <strong>S.R.</strong> [28/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="qZPvyWvoFpU" />
+    <span slot="caption">Upright-Robust Baseline -- <strong>S.R.</strong> [24/32]</span>
+  </Figure>
+</ThreeColumns>
 <ThreeColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="1mF-UcuJ4vY" />
-    <span slot="caption">COM-Robust Policy [25/32]</span>
+    <span slot="caption">COM-Robust Policy -- <strong>N.C.S.</strong> [25/32]</span>
   </Figure>
   <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="mVLbxQnohHo" />
-    <span slot="caption">Optimal Policy [2/32]</span>
+    <span slot="caption">Optimal Policy -- <strong>N.C.S.</strong> [2/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="UW1CwZUFwXo" />
-    <span slot="caption">Upright-Robust Baseline [*/32]</span>
+    <span slot="caption">Upright-Robust Baseline -- <strong>N.C.S.</strong> [*/32]</span>
   </Figure>
 </ThreeColumns>
 
-### TallBox-Top
+<h3 style="text-align: center">--------------- (TallBox-Top) ---------------</h3>
 <ThreeColumns>
   <Figure slot="left">
-    <YouTubeVideo slot="figure" videoId="15A-d8hpFxQ" />
-    <span slot="caption">COM-Robust Policy [23/32]</span>
+    <YouTubeVideo slot="figure" videoId="fIJBYcOQ1eM" />
+    <span slot="caption">COM-Robust Policy -- <strong>S.R.</strong> [32/32]</span>
+  </Figure>
+  <Figure slot="center">
+    <YouTubeVideo slot="figure" videoId="Szj-6F07oy0" />
+    <span slot="caption">Optimal Policy -- <strong>S.R.</strong> [0/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="QPH8jvDvSAM" />
+    <span slot="caption">Upright-Robust Baseline -- <strong>S.R.</strong> [13/32]</span>
+  </Figure>
+</ThreeColumns>
+<ThreeColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="y-vgT4wbG-g" />
+    <span slot="caption">COM-Robust Policy -- <strong>N.C.S.</strong> [32/32]</span>
   </Figure>
   <Figure slot="center">
     <YouTubeVideo slot="figure" videoId="69DSX8XYZVg" />
-    <span slot="caption">Optimal Policy [0/32]</span>
+    <span slot="caption">Optimal Policy -- <strong>N.C.S.</strong> [0/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="OpuBcsAeLQk" />
-    <span slot="caption">Upright-Robust Baseline [*/32]</span>
+    <span slot="caption">Upright-Robust Baseline -- <strong>N.C.S.</strong> [*/32]</span>
   </Figure>
 </ThreeColumns>
 
@@ -242,27 +309,48 @@ For objects with inertia uncertainity, COM-Robust policy is more stable yet slow
 
 For objects with pose uncertainity (i.e. Multi-object transportation), Multi-Robust policy is more stable yet slower.
 
-### Noodles
+<h3 style="text-align: center">--------------- (Noodles) ---------------</h3>
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="Z0XtRTMK_iI" />
+    <span slot="caption"> Multi-Robust Policy  -- <strong>S.R.</strong> [32/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="W1tDtH7XRQs" />
+    <span slot="caption"> Optimal Policy -- <strong>S.R.</strong> [18/32]</span>
+  </Figure>
+</TwoColumns>
 <TwoColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="69lIC0Mm9yQ" />
-    <span slot="caption">Multi-Robust Policy [32/32]</span>
+    <span slot="caption">Multi-Robust Policy -- <strong>N.C.S.</strong> [32/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="fTvm-CGpfos" />
-    <span slot="caption">Optimal Policy [5/32]</span>
+    <span slot="caption">Optimal Policy -- <strong>N.C.S.</strong> [5/32]</span>
   </Figure>
 </TwoColumns>
 
-### Bottles
+<h3 style="text-align: center">--------------- (Bottles) ---------------</h3>
+
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="epG7axDext0" />
+    <span slot="caption"> Multi-Robust Policy  -- <strong>S.R.</strong> [32/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="pWhoW73yChs" />
+    <span slot="caption"> Optimal Policy -- <strong>S.R.</strong> [0/32]</span>
+  </Figure>
+</TwoColumns>
 <TwoColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="HMh7PN9bx_Q" />
-    <span slot="caption">Multi-Robust Policy [32/32]</span>
+    <span slot="caption">Multi-Robust Policy -- <strong>N.C.S.</strong> [32/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="fn8P6RxZKU4" />
-    <span slot="caption">Optimal Policy [0/32]</span>
+    <span slot="caption">Optimal Policy -- <strong>N.C.S.</strong> [0/32]</span>
   </Figure>
 </TwoColumns>
 
@@ -270,51 +358,137 @@ For objects with pose uncertainity (i.e. Multi-object transportation), Multi-Rob
 ## Friction Coefficient Variations
 
 We test performance of Optimal policy for two surfaces rubber (<LaTeX inline formula="\mu=0.8" />) and paper (<LaTeX inline formula="\mu=0.4" />). Different trajectories are generated by varying the input friction to the policy. It is always safer to assume low friction (<LaTeX inline formula="\mu=0.1" />). High-friction surfaces fails due to tilting, while low-friction surfaces failed to slippage.
-### (<LaTeX inline formula="\mu=0.1" />)
+
+<h3 style="text-align: center">--------------- (<LaTeX inline formula="\mu=0.1" />) ---------------</h3>
+<TwoColumns>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="EbINYPfl_5Y" />
+    <span slot="caption"> Paper -- <strong>S.R.</strong> [32/32]</span>
+  </Figure>
+  <Figure slot="left">
+    <span slot="caption"> Rubber -- <strong>S.R.</strong> [32/32]</span>
+  </Figure>
+</TwoColumns>
 <TwoColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="S1WnOpCSgmU" />
-    <span slot="caption"> Rubber [32/32]</span>
+    <span slot="caption"> Rubber -- <strong>N.C.S.</strong> [32/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="_Ox-iBJwflI" />
-    <span slot="caption"> Paper [13/32]</span>
+    <span slot="caption"> Paper -- <strong>N.C.S.</strong> [13/32]</span>
   </Figure>
 </TwoColumns>
 
-### (<LaTeX inline formula="\mu=0.2" />)
+
+<h3 style="text-align: center">--------------- (<LaTeX inline formula="\mu=0.2" />) ---------------</h3>
+
+<TwoColumns>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="tSe2LXKlIcQ" />
+    <span slot="caption"> Paper -- <strong>S.R.</strong> [32/32]</span>
+  </Figure>
+  <Figure slot="left">
+    <span slot="caption"> Rubber -- <strong>S.R.</strong> [32/32]</span>
+  </Figure>
+</TwoColumns>
 <TwoColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="wuPYgTjuEGg" />
-    <span slot="caption"> Rubber [32/32]</span>
+    <span slot="caption"> Rubber -- <strong>N.C.S.</strong> [32/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="Bq4xXNTHGDU" />
-    <span slot="caption"> Paper [4/32]</span>
+    <span slot="caption"> Paper -- <strong>N.C.S.</strong> [4/32]</span>
   </Figure>
 </TwoColumns>
 
-### (<LaTeX inline formula="\mu=0.3" />)
+<h3 style="text-align: center">--------------- (<LaTeX inline formula="\mu=0.3" />) ---------------</h3>
+<TwoColumns>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="mqDQRscx2lU" />
+    <span slot="caption"> Paper -- <strong>S.R.</strong> [25/32]</span>
+  </Figure>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="F40W1AANGTc" />
+    <span slot="caption"> Rubber -- <strong>S.R.</strong> [32/32]</span>
+  </Figure>
+</TwoColumns>
 <TwoColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="DXm9O0D05DA" />
-    <span slot="caption"> Rubber [29/32]</span>
+    <span slot="caption"> Rubber -- <strong>N.C.S.</strong> [29/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="B5pcR3HI5Yg" />
-    <span slot="caption"> Paper [2/32]</span>
+    <span slot="caption"> Paper -- <strong>N.C.S.</strong> [2/32]</span>
   </Figure>
 </TwoColumns>
 
-### (<LaTeX inline formula="\mu=0.5" />)
+<h3 style="text-align: center">--------------- (<LaTeX inline formula="\mu=0.4" />) ---------------</h3>
+<TwoColumns>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="5LiW40p9yaQ" />
+    <span slot="caption"> Paper -- <strong>S.R.</strong> [16/32]</span>
+  </Figure>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="kZngfyY9768" />
+    <span slot="caption"> Rubber -- <strong>S.R.</strong> [32/32]</span>
+  </Figure>
+</TwoColumns>
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="N5wtKzsC_MQ" />
+    <span slot="caption"> Rubber -- <strong>N.C.S.</strong> [4/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="lF-LKThNIM0" />
+    <span slot="caption"> Paper -- <strong>N.C.S.</strong> [1/32]</span>
+  </Figure>
+</TwoColumns>
+
+
+<h3 style="text-align: center">--------------- (<LaTeX inline formula="\mu=0.5" />) ---------------</h3>
+<TwoColumns>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="JuBPAisngOk" />
+    <span slot="caption"> Paper -- <strong>S.R.</strong> [11/32]</span>
+  </Figure>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="aShePWRzhxw" />
+    <span slot="caption"> Rubber -- <strong>S.R.</strong> [25/32]</span>
+  </Figure>
+</TwoColumns>
 <TwoColumns>
   <Figure slot="left">
     <YouTubeVideo slot="figure" videoId="ldP0EEFQokY" />
-    <span slot="caption"> Rubber [5/32]</span>
+    <span slot="caption"> Rubber -- <strong>N.C.S.</strong> [5/32]</span>
   </Figure>
   <Figure slot="right">
     <YouTubeVideo slot="figure" videoId="HXJdGW9n2M0" />
-    <span slot="caption"> Paper [1/32]</span>
+    <span slot="caption"> Paper -- <strong>N.C.S.</strong> [1/32]</span>
+  </Figure>
+</TwoColumns>
+
+<h3 style="text-align: center">--------------- (<LaTeX inline formula="\mu=1.0" />) ---------------</h3>
+<TwoColumns>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="N5YCPqhpQU4" />
+    <span slot="caption"> Paper -- <strong>S.R.</strong> [8/32]</span>
+  </Figure>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="JebB11defzY" />
+    <span slot="caption"> Rubber -- <strong>S.R.</strong> [22/32]</span>
+  </Figure>
+</TwoColumns>
+<TwoColumns>
+  <Figure slot="left">
+    <YouTubeVideo slot="figure" videoId="0wv6vjSB8PI" />
+    <span slot="caption"> Rubber -- <strong>N.C.S.</strong> [5/32]</span>
+  </Figure>
+  <Figure slot="right">
+    <YouTubeVideo slot="figure" videoId="JdZkWJH1SD8" />
+    <span slot="caption"> Paper -- <strong>N.C.S.</strong> [1/32]</span>
   </Figure>
 </TwoColumns>
 
@@ -324,16 +498,11 @@ We test performance of Optimal policy for two surfaces rubber (<LaTeX inline for
 Multiple stacked objects 
 <Figure>
   <YouTubeVideo slot="figure" videoId="9VUIa_-5jJM" />
-  <span slot="caption">Multi-Robust Policy [8/32]</span>
+  <span slot="caption">Multi-Robust Policy -- <strong>N.C.S.</strong> [8/32]</span>
 </Figure>
-
-### CrackerBox-Rotated
-Extra air resistance.
-<Figure>
-  <YouTubeVideo slot="figure" videoId="GYYoitFCKG0" />
-  <span slot="caption">Optimal Policy [32/32]</span>
-</Figure>
-
+### Safe Self-Collision in Upright-Robust Baseline Pybullet Simulation
+Despite success in simulation, many real trajectories failed under Upright-Robust baseline. Due to different contact models and approximated geometry, collision only caused moderate sliding in simulation. On hardware, the object (pitcher) didn't slide and tilted aggressively before falling.
+<Video source={pyb_vid} />
 
 ## BibTeX citation
 
