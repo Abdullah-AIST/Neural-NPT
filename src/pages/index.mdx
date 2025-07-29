@@ -21,6 +21,22 @@ import { ImageComparison } from "../components/ImageComparison.tsx";
 
 import outside from "../assets/Supplementary Video.mp4";
 import pyb_vid from "../assets/Pybullet_Collision.webm";
+
+import video_woodBlock from "../assets/woodBlock.webm"
+import video_chips from "../assets/chips.webm"
+import video_crackerBox from "../assets/crackerBox.webm"
+import video_bleachCleanser from "../assets/bleachCleanser.webm"
+import video_tallBox from "../assets/tallBox.webm"
+import video_mustardBottle from "../assets/mustardBottle.webm"
+
+import video_powerDrill from "../assets/powerDrill.webm"
+import video_pitcher from "../assets/pitcher.webm"
+import video_bowl from "../assets/bowl.webm"
+
+import video_multi2 from "../assets/multi2.webm"
+import video_sysID from "../assets/sysID.webm"
+import video_woodblock2 from "../assets/woodblock2.webm"
+
 import transformer from "../assets/transformer.webp";
 import Splat from "../components/Splat.tsx"
 import dogsDiffc from "../assets/dogs-diffc.png"
@@ -503,6 +519,35 @@ Multiple stacked objects
 ### Safe Self-Collision in Upright-Robust Baseline Pybullet Simulation
 Despite success in simulation, many real trajectories failed under Upright-Robust baseline. Due to different contact models and approximated geometry, collision only caused moderate sliding in simulation. On hardware, the object (pitcher) didn't slide and tilted aggressively before falling.
 <Video source={pyb_vid} />
+
+### Simulation trajectories 
+<ThreeColumns>
+  <Video slot="left" source={video_woodBlock} />
+  <Video slot="center" source={video_chips} />
+  <Video slot="right" source={video_crackerBox} />
+</ThreeColumns>
+
+<ThreeColumns>
+  <Video slot="left" source={video_bleachCleanser} />
+  <Video slot="center" source={video_bleachCleanser} />
+  <Video slot="right" source={video_tallBox} />
+</ThreeColumns>
+
+<ThreeColumns>
+  <Video slot="left" source={video_powerDrill} />
+  <Video slot="center" source={video_bowl} />
+  <Video slot="right" source={video_pitcher} />
+</ThreeColumns>
+
+<ThreeColumns>
+  <Video slot="left" source={video_woodblock2} />
+  <Video slot="center" source={video_multi2} />
+  <Video slot="right" source={video_sysID} />
+</ThreeColumns>
+
+
+
+
 
 ## BibTeX citation
 
