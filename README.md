@@ -1,76 +1,94 @@
-# Research project page template
 
-This is a template you can use to build a project page for your research paper, adapted from the original [Nerfies page](https://nerfies.github.io/). It's designed to be easy to set up for those without web development experience, but web developers will appreciate that it's flexible and built with modern, familiar technologies. See a live demo of the template [here](https://research-template.roman.technology).
 
-<img src="public/screenshot-light.png" width="48%" /> <img src = "public/screenshot-dark.png" width="48%" />
+# RAMBO: RL-augmented Model-based Whole-body Control for Loco-manipulation
 
-## Features
+[Jin Cheng](https://jin-cheng.me/)<sup>1</sup>, [Dongho Kang](https://donghokang.net/)<sup>1</sup>, [Gabriele Fadini](https://www.zhaw.ch/en/about-us/person/fadi)<sup>1</sup>, [Guanya Shi](https://www.gshi.me/)<sup>2</sup>, [Stelian Coros](https://crl.ethz.ch/people/coros/index.html)<sup>1</sup>
 
-- Easily edit the content in Markdown instead of HTML.
-- Quick-to-load, works with mobile devices, accessible, SEO-friendly, and supports dark mode.
-- Includes out-of-the-box components for figures, image comparison sliders, LaTeX, two-column layouts, code blocks (with syntax highlighting), small caps, videos, and YouTube embeds.
-- Add custom components using HTML or even other web frameworks like React, Vue, or Svelte.
-- Built with [Astro](https://astro.build/), [Tailwind CSS](https://tailwindcss.com/), [MDX](https://mdxjs.com/), and [Typescript](https://www.typescriptlang.org/).
+<sup>1</sup> ETH Zurich, <sup>2</sup> Carnegie Mellon University
 
-## Real-world examples
 
-- [Token-Efficient Long Video Understanding for Multimodal LLMs](https://research.nvidia.com/labs/lpr/storm/) (NVIDIA Research)
-- [Lossy Compression With Pretrained Diffusion Models](https://jeremyiv.github.io/diffc-project-page/) (ICLR 2025)
-- [CLIP-RT: Learning Language-Conditioned Robotic Policies from Natural Language Supervision](https://clip-rt.github.io/)
-- [StochSync: Stochastic Diffusion Synchronization for Image Generation in Arbitrary Spaces](https://stochsync.github.io/)
-- [CRESSim: Simulator for Advancing Surgical Autonomy](https://tbs-ualberta.github.io/CRESSim/)
-- [PCO: Precision-Controllable Offset Surfaces with Sharp Features](https://alan-leo-wong.github.io/SIGASIA24-PCO-ProjectPage/)
+Accepted to IEEE Robotics and Automation Letters (RA-L) 2025.
 
-## Usage
+[Paper](https://arxiv.org/pdf/2504.06662) | [Arxiv](http://arxiv.org/abs/2504.06662) | [Video](https://youtu.be/VdZxhLNG6wQ) | [Website]( https://jin-cheng.me/rambo.github.io/)
 
-Want help setting it up? Please schedule a call with me [here](https://cal.com/romanhauksson/meeting), and I'll personally walk you through making your project page live! I want to talk to potential users to figure out pain points and features to add.
+[![IsaacSim](https://img.shields.io/badge/IsaacSim-4.5.0-silver.svg)](https://docs.isaacsim.omniverse.nvidia.com/latest/index.html)
+[![Python](https://img.shields.io/badge/python-3.10-blue.svg)](https://docs.python.org/3/whatsnew/3.10.html)
+[![Linux platform](https://img.shields.io/badge/platform-linux--64-orange.svg)](https://releases.ubuntu.com/20.04/)
 
-1. [Install Node.js](https://nodejs.org/en/download/package-manager).
-1. Click "Use this template" to make a copy of this repository and then clone it, or just clone it directly.
-1. Run `npm install` from the root of the project to install dependencies.
-1. Edit the content in `/src/pages/index.mdx`, and remember to update the favicon and social link thumbnail (optional). In the frontmatter in `index.mdx`, they are set to `favicon.svg` and `screenshot-light.png` respectively, which refer to files in `/public/`.
-1. Run `npm run dev` to see a live preview of your page while you edit it.
-1. Host the website using [GitHub Pages](https://pages.github.com/), [Vercel](https://vercel.com), [Netlify](https://www.netlify.com/), or any other static site hosting service.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/romanhauksson/academic-project-astro-template) [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FRomanHauksson%2Facademic-project-astro-template)
+## Installation
 
-### Icons
+1. Install isaacsim in a conda environment
+    ```
+    conda create -n rambo python=3.10
+    conda activate rambo
+    pip install --upgrade pip
+    pip install 'isaacsim[all,extscache]==4.5.0' --extra-index-url https://pypi.nvidia.com
+    ```
 
-This template uses [Astro Icon](https://www.astroicon.dev/) library.
+2. Install isaaclab and RAMBO source. We use our in-house learning framework based on [rsl-rl](https://github.com/leggedrobotics/rsl_rl), which we call `crl2`.
+    ```
+    pip install -e source/isaaclab
+    pip install -e source/isaaclab_assets
+    pip install -e source/isaaclab_mimic
+    pip install -e source/isaaclab_rl
+    pip install -e source/isaaclab_tasks
+    pip install -e source/crl2
+    ```
 
-To use a custom icon:
+3. Install other dependencies
+    ```bash
+    pip install wandb
+    pip install qpth
+    ```
 
-1. Search on [Iconify](https://icon-sets.iconify.design/) to find the icon you want. For example, the Hugging Face icon is `simple-icons:huggingface`, from the Simple Icons icon set.
-1. Install the corresponding icon set: `npm install @iconify-json/simple-icons`.
-1. If you're using the icon in one of the link buttons, add it in one of the objects in the `links` prop of the `<Header />` component in `index.mdx`:
+## Train & Play
+To make `wandb` work, do `wandb login` first in conda environment. And export `WANDB_USERNAME` in your shell.
 
-```mdx
-    {
-      name: "Hugging Face",
-      url: "https://huggingface.co/",
-      icon: "simple-icons:huggingface"
-    }
+Due to memory constraints, wandb will upload the videos after the training is done. You can still view the training videos locally in the log folder.
+
+To train:
+```bash
+# in the root directory of IsaacLab
+python scripts/reinforcement_learning/crl2/train.py --task Isaac-RAMBO-Quadruped-Go2-v0 --headless --logger=wandb --video
+#python scripts/reinforcement_learning/crl2/train.py --task Isaac-RAMBO-Biped-Go2-v0 --headless --logger=wandb --video
 ```
 
-Or, to use it anywhere in an Astro component or MDX file:
-
-```mdx
-import { Icon } from "astro-icon/components";
-
-<Icon name={"simple-icons:huggingface"} />
+To play:
+```bash
+# in the root directory of IsaacLab
+python scripts/reinforcement_learning/crl2/play.py --task Isaac-RAMBO-Quadruped-Go2-v0 --num_envs 10
+#python scripts/reinforcement_learning/crl2/play.py --task Isaac-RAMBO-Biped-Go2-v0 --num_envs 10
+```
+## Citation
+If you use this code in your research, please cite our paper:
+```bibtex
+@article{cheng2025rambo,
+  title={RAMBO: RL-augmented Model-based Optimal Control for Whole-body Loco-manipulation},
+  author={Cheng, Jin and Kang, Dongho and Fadini, Gabriele and Shi, Guanya and Coros, Stelian},
+  journal={arXiv preprint arXiv:2504.06662},
+  year={2025}
+}
 ```
 
-### Notes
+## License
 
-- If you're using VS Code, I recommend installing the [Astro extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode) to get IntelliSense, syntax highlighting, and other features.
-- When people share the link to your project on social media, it will often appear as a "link preview" based on the title, description, thumbnail, and favicon you configured. Double check that these previews look right using [this tool](https://linkpreview.xyz/).
-- The Nerfies page uses the Google Sans font, which is licensed by Google, so unfortunately, I had to change it to a different font instead (I picked Noto Sans).
+This codebase is under [CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/deed.en). You may not use the material for commercial purposes, e.g., to make demos to advertise your commercial products.
 
-## Alternative templates
 
-- [Clarity: A Minimalist Website Template for AI Research](https://shikun.io/projects/clarity) by Shikun Liu. Beautiful and careful design that's distinct from the original Nerfies page. Editable via an HTML template and SCSS.
-- [Academic Project Page Template](https://denkiwakame.github.io/academic-project-template/) by Mai Nishimura. Built with React and UIKit and editable with Markdown in a YAML file.
+## Acknowledgements
 
-## Credits
+- [CAJun](https://github.com/yxyang/cajun/): Our QP based optimization module is inspired by the `cajun` project.
+- [RSL_RL](https://github.com/leggedrobotics/rsl_rl): Our RL framework `crl2` is based on `rsl_rl` library for the PPO implementation.
+- [IsaacLab](https://github.com/isaac-sim/IsaacLab): We use the `isaaclab` library for the RL training and evaluation.
 
-This template was adapted from Eliahu Horwitz's [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template), which was adapted from Keunhong Park's [project page for _Nerfies_](https://nerfies.github.io/). It's licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+
+## Contact
+
+Feel free to open an issue or discussion if you encounter any problems or have questions about this project.
+
+For collaborations, feedback, or further inquiries, please reach out to:
+
+- Jin Cheng: [jin.cheng@inf.ethz.ch](mailto:jin.cheng@inf.ethz.ch).
+
+We welcome contributions and are happy to support the community in building upon this work!
