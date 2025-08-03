@@ -21,8 +21,9 @@ Submitted to IEEE Robotics and Automation Letters (RA-L).
 
     Our setup is based Ubuntu 22.4, IsaacSim 4.5, and IsaacLab 2.1.0. We use RL_games for training.
 
-2. Source the neural_npt task -- The task was developed using IsaacLab template (https://isaac-sim.github.io/IsaacLab/v2.1.0/source/overview/developer-guide/template.html)
+2. Activate isaaclab conda env and source the neural_npt task -- The task was developed using IsaacLab template (https://isaac-sim.github.io/IsaacLab/v2.1.0/source/overview/developer-guide/template.html)
     ```
+    conda activate env_isaaclab
     python -m pip install -e source/neural_npt/
     ```
 
